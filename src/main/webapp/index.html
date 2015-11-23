@@ -1,0 +1,52 @@
+    <!DOCTYPE html>
+    <html ng-app="twitter_app">
+    <head lang="en">
+        <title>Twitter</title>
+        <link rel="stylesheet" href="css/bootstrap-theme.css" />
+        <link rel="stylesheet" href="css/bootstrap.min.css" />
+        <link rel="stylesheet" href="css/cssfile.css" />
+        <script type="text/javascript" src="js/angular.min.js"></script>
+        <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/ui-bootstrap-tpls-0.6.0.js"></script>
+        <script type="text/javascript" src="js/angular-ui-router.js"></script>
+        <script type="text/javascript" src="js/headermodule.js"></script>
+        <script type="text/javascript" src="js/main.js"></script>
+        <script type="text/javascript" src="js/router.js"></script>
+        <script type="text/javascript" src="js/loginctrl.js"></script>
+        <script type="text/javascript" src="js/dashboardctrl.js"></script>
+        <script type="text/javascript" src="js/changePswdctrl.js"></script>
+        <script type="text/javascript" src="js/profilectrl.js"></script>
+        <script type="text/javascript" src="js/tweetctrl.js"></script>
+        <script type="text/javascript" src="js/logoutctrl.js"></script>
+        <script type="text/javascript" src="js/service.js"></script>
+        <script type="text/javascript" src="js/forgotPswdctrl.js"></script>
+        <script type="text/javascript" src="js/mytweetsctrl.js"></script>
+        <script type="text/javascript" src="js/homectrl.js"></script>
+        <script type="text/javascript" src="js/ngStorage.js"></script>
+        <script type="text/javascript" src="js/service.js"></script>
+
+    </head>
+    <body  id="body" ng-controller="mainctrl" ng-init="show_header= true">
+
+    <nav id="header" ng-show="show_header" class="navbar navbar-inverse navbar-fixed-top ">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand active " ui-sref="Login">Welcome to Twitter</a>
+            </div>
+
+        </div>
+    </nav>
+
+    <div  ui-view>
+
+    </div>
+
+    <nav id="footer" class="navbar navbar-default navbar-fixed-bottom">
+        <ul class="list-inline">
+            <li ng-repeat="link in footerLinks"><a>{{link}}</a></li>
+        </ul>
+    </nav>
+
+    </body>
+    </html>

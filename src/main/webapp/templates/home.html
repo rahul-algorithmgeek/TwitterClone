@@ -1,0 +1,17 @@
+<div>
+    <div>
+
+        <div class="col-lg-6" id="tweet">
+            <h3 style="color: #ffffff">Tweet Feed</h3>
+            <div style="background-color: orange;height: 60px;margin: auto ;padding:5px;border-radius: 5%;margin-top: 10px " ng-repeat="tweet in tweets">
+
+                <p>By : {{tweet[1] |uppercase}} At : {{tweet[2]|  date:'MM/dd/yyyy @ h:mma' }} </p>
+                <p>Message : {{tweet[3]}}</p>
+            </div>
+
+        </div>
+        <div class="col-lg-6">
+
+        </div>
+    </div>
+</div>

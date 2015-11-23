@@ -1,0 +1,39 @@
+
+    <div style="margin-top: 3% background: transparent;">
+        <div class="col-md-4 follow" >
+            <p><h3>Welcome {{name | uppercase}}</h3></p>
+            <div id="center">
+                <img style="height: 200px;width:200px" ng-src="{{image}}">
+                <form style="margin-top: 7px" action="/uploadImage" method="POST" enctype="multipart/form-data">
+
+
+                    <input type="file" name="file">
+                    <input type="submit" value="Upload" class="btn btn-primary">
+                </form>
+            </div>
+            <div style="text-decoration:#46b8da;text-align: center;font-size: 20px;font-family: sans-serif;margin-top: 20%">
+            <p>Following :{{followingcounts}}</p>
+            <p>Followers :{{followercounts}}</p>
+            <p>Tweets :{{tweetcounts}}</p>
+            </div>
+        </div>
+        <div class="col-md-4 follow">
+            <p><h3>People whom you followed</h3></p>
+            <div ng-repeat="follow in follows" class="btn-group">
+                <button class="btn  btn-primary col-md-6" style="width:150px; margin-top:10px;"  >{{follow[0]|uppercase}}</button>
+                <button class="btn  btn-danger col-md-6" style="width:150px; margin-top:10px;" ng-click="unfollow(follow[1])" >UnFollow</button>
+
+            </div>
+        </div>
+        <div class="col-md-4 follow">
+            <p><h3>You May Like to Follow</h3></p>
+            <div  ng-repeat="nfollow in nfollows">
+                <div class="btn-group">
+                    <button class="btn  btn-info col-md-6" style="width:150px; margin-top:10px;" >{{nfollow[0]|uppercase}}</button>
+                    <button class="btn btn-primary col-md-6" style="width:150px;margin-top:10px;" ng-click="follow(nfollow[1])" >Follow</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+

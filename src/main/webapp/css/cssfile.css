@@ -1,0 +1,87 @@
+.login_div{
+    width:30%;
+    border: 2px black solid;
+    margin-left:70%;
+    margin-top: 5%;
+    background-color: #ffffff;
+    opacity: 1;
+    padding: 2%;
+}
+.signup_div{
+    width:30%;
+    border: 2px black solid;
+    margin-left:70%;
+    margin-top: 2%;
+    background-color: #ffffff;
+    opacity: 1;
+    padding: 2%;
+}
+#body{
+    background-image: url("../image/background2.jpg");
+    background-repeat: no-repeat;
+    /*background-size: cover;*/
+
+
+}
+
+.forgot_pswd{
+
+    width:30%;
+    border: 2px black solid;
+    margin-left:35%;
+    margin-top: 10%;
+    background-color: rgba(180,225,225,0.5)
+}
+.row{
+    padding: 4px;
+}
+
+.change_Pswd{
+    width:20%;
+    /*border: 2px black solid;*/
+    margin-left:35%;
+    margin-top: 10%;
+    /*background-color: rgba(180,225,225,0.5)*/
+}
+.error_notify{
+    font-size: 9px; color: RED;
+}
+
+.ext_btn{
+    margin-top:7%;
+    margin-right: 5%;
+}
+.modal{
+    display: block;
+}
+.navbar-custom {
+    color: #FFFFFF;
+    background-color: #aaaaaa;
+}
+.follow{
+
+   // border: 2px solid #122b40;
+    color: #ffffff;
+    height:500px;
+    overflow: auto;
+
+}
+#center{
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+    height: 200px;
+    background-color: orange;
+    position: relative;
+
+}
+#mytweet{
+    border: 2px solid #4cae4c;
+    height:500px;
+    overflow: auto;
+}
+#tweet{
+    border: 2px solid #4cae4c;
+    height:500px;
+    overflow: auto;
+}

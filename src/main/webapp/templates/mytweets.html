@@ -1,0 +1,18 @@
+    <div>
+        <div>
+            <div class="col-lg-4">
+
+            </div>
+            <div class="col-lg-4" id="mytweet">
+                <div style="background-color: orange;height: 70px;padding:5px;margin: auto ;border-radius: 5px;margin-top: 10px; " ng-repeat="tweet in mytweets">
+
+                    <p>By : {{name |uppercase}} At : {{tweet.timeSt|  date:'MM/dd/yyyy @ h:mma' }} </p>
+                    <p>Message : {{tweet.message}}</p>
+                </div>
+
+            </div>
+            <div class="col-lg-4">
+
+            </div>
+        </div>
+    </div>

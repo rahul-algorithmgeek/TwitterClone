@@ -1,0 +1,27 @@
+    <div>
+
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand active" ui-sref="Dashboard.Home">HOME</a>
+                </div>
+                <div>
+                    <ul class="nav navbar-nav">
+                        <li ng-repeat="link in links">
+                            <a ui-sref="Dashboard.{{link}}">{{link}}</a>
+                        </li>
+                    </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+
+                        <li><a ui-sref="Dashboard.Logout">Logout</a></li>
+                      </ul>
+
+                </div>
+            </div>
+        </nav>
+
+        <div  style="margin-top:5%;background: transparent" ui-view>
+
+        </div>
+    </div>

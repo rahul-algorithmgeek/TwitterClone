@@ -37,5 +37,10 @@ Developed using Spring-boot , Angular js ,Bootstrap ,HTML
 
 
 6.	CREATE SEQUENCE hibernate_sequence  INCREMENT 1
-7. 	External jar used : org.json.jar
+7.	Go to src/main/resources/application.properties  and change the 
+		spring.mail.username=<YOUR EMAIL ID>
+		spring.mail.password=<YOUR PASSWORD>
+8.	Go to src/main/java/fareye/emailTest.java    and change the
+		IP address to your current IP address in 'String mailBody' .
+9. 	External jar used : org.json.jar
 	

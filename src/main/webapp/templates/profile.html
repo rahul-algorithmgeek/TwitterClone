@@ -20,7 +20,7 @@
         <div class="col-md-4 follow">
             <p><h3>People whom you followed</h3></p>
             <div ng-repeat="follow in follows" class="btn-group">
-                <button class="btn  btn-primary col-md-6" style="width:150px; margin-top:10px;"  >{{follow[0]|uppercase}}</button>
+                <button class="btn  btn-primary col-md-6" style="width:150px; margin-top:10px;"  ><img class="pull-left"style="height: 20px;width: 30px;" ng-src="{{follow[2]}}">{{follow[0]|uppercase}}</button>
                 <button class="btn  btn-danger col-md-6" style="width:150px; margin-top:10px;" ng-click="unfollow(follow[1])" >UnFollow</button>
 
             </div>
@@ -29,7 +29,7 @@
             <p><h3>You May Like to Follow</h3></p>
             <div  ng-repeat="nfollow in nfollows">
                 <div class="btn-group">
-                    <button class="btn  btn-info col-md-6" style="width:150px; margin-top:10px;" >{{nfollow[0]|uppercase}}</button>
+                    <button class="btn  btn-info col-md-6" style="width:150px; margin-top:10px;" ><img class="pull-left" style="height: 20px;width: 30px;"ng-src="{{nfollow[2]}}">{{nfollow[0]|uppercase}}</button>
                     <button class="btn btn-primary col-md-6" style="width:150px;margin-top:10px;" ng-click="follow(nfollow[1])" >Follow</button>
                 </div>
             </div>

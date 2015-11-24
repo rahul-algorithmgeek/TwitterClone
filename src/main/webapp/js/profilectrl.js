@@ -7,6 +7,24 @@
         $scope.name=loggedUserDetails.getName();
         console.log(username);
 
+        //Getting profile Image Url!
+        $http({
+            url:'/getImageUrl',
+            method:'post'
+
+        }).then(
+            function successCallback(response){
+                if(response.statusText=='OK'){
+                    loggedUserDetails.setUrl(response.data.profileImgUrl);
+                    console.log(response.data);
+
+                }
+            },
+            function errorCallback(response){
+                console.log("Error loading image");
+            }
+        )
+
         //For getting tweet, follower and following  counts
         $http({
             url:'/counts',

@@ -1,6 +1,7 @@
 package fareye;
 
 
+import org.json.HTTP;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -195,6 +196,20 @@ public class RequestHandler {
         }
     }
 
+    //Updating Profile Image in view
+    @RequestMapping("/getImageUrl")
+    public ResponseEntity handleImageUrlRequest(@RequestBody String obj){
+        User img=userRepository.findByUsername(sessionData.getUsername());
+        JSONObject ob=new JSONObject();
+        try {
+            ob.put("profileImgUrl", img.getProfileImgUrl());
+            return new ResponseEntity(ob.toString(), HttpStatus.OK);
+        }
+        catch(Exception e) {
+            System.out.println(e.getMessage());
+        }
+        return new ResponseEntity(null,HttpStatus.BAD_REQUEST);
+    }
     //Follower counts , following count and tweet counts
     @RequestMapping("/counts")
     public ResponseEntity handleCount(@RequestBody User obj){

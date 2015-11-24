@@ -27,24 +27,24 @@
         </div>
 
         <div  class="container-fluid signup_div">
-            <form>
+            <form name="signup">
             <div class="row">
                 <p style="display: inline; font-weight: bolder">New to Twitter?</p> Sign up
             </div>
             <div class="row col-sm-12">
-                <input type="text" class="form-control focus" placeholder="Full Name" ng-model="new_user.name" required/>
+                <input type="text"name="un" class="form-control focus" placeholder="Full Name" ng-model="new_user.name" required/>
             </div>
             <div class="row col-sm-12">
-                <input type="email" class="form-control focus" placeholder="Email" ng-model="new_user.email" required/>
+                <input type="email" name="e" class="form-control focus" placeholder="Email" ng-model="new_user.email" required/>
             </div>
             <div class="row col-sm-12">
-                <input type="tel" pattern="[7-9]{1}[0-9]{9}" class="form-control focus" placeholder="phone" ng-model="new_user.phone"required/>
+                <input type="tel" name="ph" pattern="[7-9]{1}[0-9]{9}"  class="form-control focus" placeholder="phone" ng-model="new_user.phone"required/>
             </div>
             <div class="row col-sm-12">
-                <input type="password" class="form-control focus" placeholder="Password" ng-model="new_user.password"required/>
+                <input type="password" name="p" class="form-control focus" placeholder="Password" ng-model="new_user.password"required/>
             </div>
             <div class="row col-sm-12">
-                <button class="btn-info pull-right" ng-click="addUser()">Sign up for Twitter</button>
+                <button class="btn-info pull-right" ng-click="addUser()" ng-disabled="!(signup.un.$dirty && signup.e.$dirty && signup.ph.$dirty && signup.p.$dirty) ">Sign up for Twitter</button>
             </div>
             </form>
         </div>

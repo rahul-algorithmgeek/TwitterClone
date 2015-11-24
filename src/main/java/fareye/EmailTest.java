@@ -28,11 +28,7 @@ public class EmailTest {
 
             // email subject
             String mailSubject = "Welcome to Twitter !";
-            String unique="";
-            for(int i=0;i<toAddr.length();i++){
-                unique+=(char)(toAddr.charAt(i)^10);
-            }
-            System.out.println("Unique: "+unique);
+
             // email body
             User user=usr.findByEmail(toAddr);
             String mailBody = "Congratulations ! You just created account on MyTwitter " + "\nYour login credentials are :\n" + "Email id :" + toAddr + "\nPassword : " + password ;

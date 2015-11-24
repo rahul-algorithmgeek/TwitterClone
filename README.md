@@ -11,7 +11,6 @@ Developed using Spring-boot , Angular js ,Bootstrap ,HTML
   password character varying(50),
   phone character varying(20),
   profileimgurl character varying(250),
-  followsto text,
   acstatus character varying(50),
   CONSTRAINT users_pkey PRIMARY KEY (email)
 )

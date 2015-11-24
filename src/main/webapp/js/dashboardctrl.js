@@ -5,10 +5,8 @@ app.controller('dashboardctrl', ['$scope','$window','$http','$state','loggedUser
 if(loggedUserDetails.getUsername()!=null) {
     $scope.links = ['Profile', 'ChangePassword', 'MyTweets', 'Tweet'];
 
-    //$scope.enableprofile = function () {
         $state.go('Dashboard.Profile');
-    //}();
-}
+    }
     else{
     console.log("No session exists...");
     $state.go('Login');

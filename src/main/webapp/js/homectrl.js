@@ -9,7 +9,7 @@ app.controller('homectrl', ['$window','$interval','$scope','$http','loggedUserDe
     $scope.image=loggedUserDetails.getUrl();
     $scope.name=loggedUserDetails.getName();
     console.log(username);
-    //For Displaying Follow
+    //For Displaying all tweets
     var req={
         url:'/tweets',
         method:'POST',
@@ -23,14 +23,10 @@ app.controller('homectrl', ['$window','$interval','$scope','$http','loggedUserDe
                 $scope.tweets=response.data;
 
 
-                //loggedUserDetails.setName(response.data.name);
-                //loggedUserDetails.setUsername(response.data.username);
-                //loggedUserDetails.setUrl(response.data.imageUrl);
-                //console.log('log :'+loggedUserDetails.getUsername());
             }
             else{
-                // $scope.invalid_cred=true;
-                $window.alert("Fail to To load mytweetlist list");
+
+                $window.alert("Fail to To load all tweet list");
             }
 
         },

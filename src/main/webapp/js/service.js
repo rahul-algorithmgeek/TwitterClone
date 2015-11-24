@@ -5,7 +5,7 @@ app.service('loggedUserDetails',['$localStorage',function($localStorage){
 
     this.setName=function(uname){
         $localStorage.name=uname;
-        //console.log("User name "+uname+" or "+this.name);
+
     }
     this.getName=function(){
         return $localStorage.name;

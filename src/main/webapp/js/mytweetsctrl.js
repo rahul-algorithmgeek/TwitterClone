@@ -6,7 +6,7 @@ app.controller('mytweetsctrl', ['$window','$interval','$scope','$http','loggedUs
     $scope.image=loggedUserDetails.getUrl();
     $scope.name=loggedUserDetails.getName();
     console.log(username);
-    //For Displaying Follow
+    //For Displaying My own tweets
     var req={
         url:'/mytweets',
         method:'POST',
@@ -18,12 +18,6 @@ app.controller('mytweetsctrl', ['$window','$interval','$scope','$http','loggedUs
             console.log(response);
             if(response.statusText=="OK"){
                 $scope.mytweets=response.data;
-
-
-                //loggedUserDetails.setName(response.data.name);
-                //loggedUserDetails.setUsername(response.data.username);
-                //loggedUserDetails.setUrl(response.data.imageUrl);
-                //console.log('log :'+loggedUserDetails.getUsername());
             }
             else{
                 // $scope.invalid_cred=true;

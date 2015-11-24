@@ -27,11 +27,6 @@ public class User {
     @Column(updatable=true)
     private String password;
     private String phone;
-
-
-
-    @Column(name="followsto")
-    private String followsTo;
     @Column(name="profileimgurl")
     private String profileImgUrl;
 
@@ -103,11 +98,4 @@ public class User {
     public void setAcStatus(String acStatus) {
         this.acStatus = acStatus;
     }
-    public String getFollowsTo() {
-        return followsTo;
-    }
-
-    public void setFollowsTo(String followsTo) {
-        this.followsTo = followsTo;
-    }
-}
+   }

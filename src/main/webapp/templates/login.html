@@ -4,18 +4,18 @@
             <div class="row" ng-init="invalid_cred=false;" ng-show="invalid_cred">
                 <div class="col-sm-12 pull-right"> <p class="error_notify">Login Details are invalid.</p></div>
             </div>
-            <form>
+            <form ng-submit="authUser()">
             <div class="row">
                 <div class="col-sm-12">
-                    <input type="text" id="un" class="form-control focus" placeholder="Phone or email" ng-model="login_cred.username" />
+                    <input type="text" id="un" class="form-control focus" placeholder="Phone or email" ng-model="login_cred.username"required />
                 </div>
             </div>
             <div class="row">
                 <div class="col-sm-8">
-                    <input type="password" id="pass" class=" form-control focus" placeholder="Password" ng-model="login_cred.password"/>
+                    <input type="password" id="pass" class=" form-control focus" placeholder="Password" ng-model="login_cred.password"required/>
                 </div>
                 <div class="col-sm-4">
-                    <button type="submit"class="btn-primary" ng-click="authUser()" ng-disable="">Login</button>
+                    <input type="submit" value="Login" class="btn-primary"  ng-disable="">
                 </div>
             </div>
             <div class="row">
@@ -27,7 +27,7 @@
         </div>
 
         <div  class="container-fluid signup_div">
-            <form name="signup">
+            <form name="signup" ng-submit="addUser()">
             <div class="row">
                 <p style="display: inline; font-weight: bolder">New to Twitter?</p> Sign up
             </div>
@@ -44,7 +44,8 @@
                 <input type="password" name="p" class="form-control focus" placeholder="Password" ng-model="new_user.password"required/>
             </div>
             <div class="row col-sm-12">
-                <button class="btn-info pull-right" ng-click="addUser()" ng-disabled="!(signup.un.$dirty && signup.e.$dirty && signup.ph.$dirty && signup.p.$dirty) ">Sign up for Twitter</button>
+                <input type="submit" value="Sign up for Twitter" class="btn-info pull-right"  ng-disabled="!(signup.un.$dirty && signup.e.$dirty && signup.ph.$dirty && signup.p.$dirty) ">
+
             </div>
             </form>
         </div>

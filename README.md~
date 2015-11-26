@@ -50,7 +50,7 @@ Developed using Spring-boot , Angular js ,Bootstrap ,HTML
 		spring.datasource.password
 
 11. 	I have used java 1.8
-	If you are using previous version of java ,make change in pom.xml and few more setting go to bellow link. 
+	If you are using previous version of java ,for change pom.xml and few more setting go to bellow link. 
 	http://stackoverflow.com/questions/25878045/errorjava-invalid-source-release-8-in-intellij-what-does-it-mean
 
 	</pre>

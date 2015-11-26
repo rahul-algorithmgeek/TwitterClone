@@ -54,10 +54,8 @@ public class RequestHandler {
                     resobj.put("name", user.getName());
                     resobj.put("username", user.getUsername());
                     resobj.put("imageUrl", user.getProfileImgUrl());
-
                     sessionData.setUsername(user.getUsername());
                     sessionData.setName(user.getName());
-
                     System.out.println("Success");
                     return new ResponseEntity(resobj.toString(), HttpStatus.OK);
                 }
@@ -174,7 +172,8 @@ public class RequestHandler {
 
     //Upload Image handler
     @RequestMapping(value = "/uploadImage", method = RequestMethod.POST)
-    public @ResponseBody void handleFileUpload( @RequestParam("file") MultipartFile file,HttpServletResponse response) {
+    public @ResponseBody void handleFileUpload( @RequestParam("file") MultipartFile file,HttpServletResponse response)
+    {
         if (!file.isEmpty()) {
             System.out.println("In uploadimage ! ");
             try {

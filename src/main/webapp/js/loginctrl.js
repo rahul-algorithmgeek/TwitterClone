@@ -28,15 +28,12 @@ app.controller('loginctrl', ['$window','$interval','$scope','$http','loggedUserD
                     loggedUserDetails.setUrl(response.data.imageUrl);
                     console.log('log :'+loggedUserDetails.getUsername());
                 }
-                else{
-                    $scope.invalid_cred=true;
-                    $window.alert("Fail to authenticate ! check your email ID ");
-                }
+
 
              },
             function errorCallback(response){
                 console.log("Exception");
-                $window.alert("Exception check your email ID to authenticate .");
+                $scope.invalid_cred=true;
             }
         );
     }
@@ -56,6 +53,7 @@ app.controller('loginctrl', ['$window','$interval','$scope','$http','loggedUserD
                 console.log(response.data);
                 if(response.statusText=="OK")
                 {
+                    console.log(response);
 
                      console.log(' added log :'+loggedUserDetails.getUsername());
                     $window.alert("ADDED Check your email for Activation !");
@@ -64,14 +62,19 @@ app.controller('loginctrl', ['$window','$interval','$scope','$http','loggedUserD
                     $state.go('Login');
 
                 }
-                else if(response.statusText="FOUND"){
-                    $window.alert("Email ID or Phone already registered .");
-                }
+
 
             },
             function errorCallback(response){
-                console.log("Exception");
-                $window.alert("Enter valid Email ID or Phone  .");
+                if(response.status==302){
+                    $window.alert("Email or Phone Already Registered !");
+
+                }
+                else {
+                    console.log("Exception");
+                    console.log(response);
+                    $window.alert("Some Exception happened");
+                }
             }
         );
     }

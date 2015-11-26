@@ -28,7 +28,6 @@ public class SessionData implements Serializable{
     public long getUsername() {
         return username;
     }
-
     public void setUsername(long username) {
         this.username = username;
     }

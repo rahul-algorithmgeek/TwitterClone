@@ -79,7 +79,8 @@
 #mytweet{
     border: 2px solid #4cae4c;
     height:500px;
-    overflow: auto;
+    overflow-y: scroll;
+   /*overflow-y: auto;*/
 }
 #tweet{
     border: 2px solid #4cae4c;

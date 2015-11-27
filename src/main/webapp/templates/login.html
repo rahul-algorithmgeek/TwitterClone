@@ -1,54 +1,58 @@
-    <div >
+        <div >
 
-        <div  class="container-fluid login_div" >
-            <div class="row" ng-init="invalid_cred=false;" ng-show="invalid_cred">
-                <div class="col-sm-12 pull-right"> <p class="error_notify" style="font-size:15px">Login Details are invalid.</p></div>
-            </div>
-            <form ng-submit="authUser()">
-            <div class="row">
-                <div class="col-sm-12">
-                    <input type="text" id="un" class="form-control focus" placeholder="Phone or email" ng-model="login_cred.username"required />
+            <div  class="container-fluid login_div" >
+                <div class="row" ng-init="invalid_cred=false;" ng-show="invalid_cred">
+                    <div class="col-sm-12 pull-right"> <p class="error_notify" style="font-size:15px">Login Details are invalid.</p></div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-8">
-                    <input type="password" id="pass" class=" form-control focus" placeholder="Password" ng-model="login_cred.password"required/>
+                <form ng-submit="authUser()">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <input type="text" id="un" class="form-control focus" placeholder="Phone or email" ng-model="login_cred.username"required />
+                    </div>
                 </div>
-                <div class="col-sm-4">
-                    <input type="submit" value="Login" class="btn-primary"  ng-disable="">
+                <div class="row">
+                    <div class="col-sm-8">
+                        <input type="password" id="pass" class=" form-control focus" placeholder="Password" ng-model="login_cred.password"required/>
+                    </div>
+                    <div class="col-sm-4">
+                        <input type="submit" value="Login" class="btn-primary"  ng-disable="">
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-12 pull-right">
-                    <a ui-sref="ForgotPswd" class="col-sm-offset-6">Forgot Password?</a>
+                <div class="row">
+                    <div class="col-sm-12 pull-right">
+                        <a ui-sref="ForgotPswd" class="col-sm-offset-6">Forgot Password?</a>
+                    </div>
                 </div>
+                    </form>
             </div>
+
+
+            <div  class="container-fluid signup_div" >
+                <link rel="stylesheet" href="http://css-spinners.com/css/spinner/three-quarters.css" type="text/css">
+                <div class="three-quarters-loader" ng-init="loader=false "ng-show="loader">
+                    Loading… <p>Please Wait...</p>
+                </div>
+                <form name="signup" ng-submit="addUser()">
+                <div class="row">
+                    <p style="display: inline; font-weight: bolder">New to Twitter?</p> Sign up
+                </div>
+                <div class="row col-sm-12">
+                    <input type="text"name="un" class="form-control focus" placeholder="Full Name" ng-model="new_user.name" required/>
+                </div>
+                <div class="row col-sm-12">
+                    <input type="email" name="e" class="form-control focus" placeholder="Email" ng-model="new_user.email" required/>
+                </div>
+                <div class="row col-sm-12">
+                    <input type="tel" name="ph" pattern="[7-9]{1}[0-9]{9}"  class="form-control focus" placeholder="phone" ng-model="new_user.phone"required/>
+                </div>
+                <div class="row col-sm-12">
+                    <input type="password" name="p" class="form-control focus" placeholder="Password" ng-model="new_user.password"required/>
+                </div>
+                <div class="row col-sm-12">
+                    <input type="submit" value="Sign up for Twitter" class="btn-info pull-right"  ng-disabled="!(signup.un.$dirty && signup.e.$dirty && signup.ph.$dirty && signup.p.$dirty) ">
+
+                </div>
                 </form>
+            </div>
         </div>
 
-        <div  class="container-fluid signup_div">
-            <form name="signup" ng-submit="addUser()">
-            <div class="row">
-                <p style="display: inline; font-weight: bolder">New to Twitter?</p> Sign up
-            </div>
-            <div class="row col-sm-12">
-                <input type="text"name="un" class="form-control focus" placeholder="Full Name" ng-model="new_user.name" required/>
-            </div>
-            <div class="row col-sm-12">
-                <input type="email" name="e" class="form-control focus" placeholder="Email" ng-model="new_user.email" required/>
-            </div>
-            <div class="row col-sm-12">
-                <input type="tel" name="ph" pattern="[7-9]{1}[0-9]{9}"  class="form-control focus" placeholder="phone" ng-model="new_user.phone"required/>
-            </div>
-            <div class="row col-sm-12">
-                <input type="password" name="p" class="form-control focus" placeholder="Password" ng-model="new_user.password"required/>
-            </div>
-            <div class="row col-sm-12">
-                <input type="submit" value="Sign up for Twitter" class="btn-info pull-right"  ng-disabled="!(signup.un.$dirty && signup.e.$dirty && signup.ph.$dirty && signup.p.$dirty) ">
-
-            </div>
-            </form>
-        </div>
-        </div>
-
-    </div>

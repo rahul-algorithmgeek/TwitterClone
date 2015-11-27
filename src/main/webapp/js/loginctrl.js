@@ -41,7 +41,7 @@ app.controller('loginctrl', ['$window','$interval','$scope','$http','loggedUserD
 
 // new user
     $scope.addUser=function(){
-
+           $scope.loader=true;
         console.log($scope.new_user);
         var req={
             url:'/addUser',
@@ -53,6 +53,7 @@ app.controller('loginctrl', ['$window','$interval','$scope','$http','loggedUserD
                 console.log(response.data);
                 if(response.statusText=="OK")
                 {
+                    $scope.loader=false;
                     console.log(response);
 
                      console.log(' added log :'+loggedUserDetails.getUsername());
@@ -66,6 +67,7 @@ app.controller('loginctrl', ['$window','$interval','$scope','$http','loggedUserD
 
             },
             function errorCallback(response){
+                $scope.loader=false;
                 if(response.status==302){
                     $window.alert("Email or Phone Already Registered !");
 

@@ -6,7 +6,7 @@ app.controller('forgotPswdctrl',['$scope','$http','$window','loggedUserDetails',
     console.log("In forget controller");
     $scope.reqPwsd={};
     $scope.forgotPswd=function(){
-
+        $scope.floader=true;
 
         console.log($scope.reqPswd);
         $http({
@@ -16,16 +16,14 @@ app.controller('forgotPswdctrl',['$scope','$http','$window','loggedUserDetails',
 
         }).then(function successCallBack(response){
             if(response.statusText="OK") {
-                $window.alert("Password will be sent to your email");
+                $scope.floader=false;
                 $state.go('Login');
+                $window.alert("Password will be sent to your email");
+//
             }
-            else {
-                $window.alert("Enter valid registered email and phone no.!");
-                    $scope.reqPwsd.email='';
-                    $scope.reqPwsd.tel='';
 
-            }
         },function errorCallBack(response){
+            $scope.floader=false;
             $window.alert("Enter valid registered email and phone no.!");
             $scope.reqPwsd.email='';
             $scope.reqPwsd.tel='';

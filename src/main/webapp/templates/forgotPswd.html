@@ -1,5 +1,10 @@
     <div class="col-sm-4 forgot_pswd">
+        <link rel="stylesheet" href="http://css-spinners.com/css/spinner/three-quarters.css" type="text/css">
+        <div class="three-quarters-loader" ng-init="floader=false "ng-show="floader">
+            Loading…
+        </div>
         <div class="container-fluid">
+
             <div class="row">
 
                 <input type="email" name="email" class="form-control focus col-sm-12" placeholder="Email" ng-model="reqPswd.email" required/>
@@ -11,4 +16,5 @@
                 <button class="col-sm-6 pull-right btn-primary " ng-click="forgotPswd()">Request Password</button>
             </div>
         </div>
+
     </div>

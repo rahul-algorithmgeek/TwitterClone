@@ -32,7 +32,7 @@ public class EmailTest {
             // email body
             User user=usr.findByEmail(toAddr);
             String mailBody = "Congratulations ! You just created account on MyTwitter " + "\nYour login credentials are :\n" + "Email id :" + toAddr + "\nPassword : " + password ;
-            mailBody+="\nClick url to activate your account: 192.168.1.168:8080/activate?un="+user.getUsername();
+            mailBody+="\nClick url to activate your account: 192.168.1.171:8080/activate?un="+user.getUsername();
             emailAPI.readyToSendEmail(toAddr, fromAddress, mailSubject, mailBody);
         } catch (Exception e) {
             System.out.print("Error in email test " + e);

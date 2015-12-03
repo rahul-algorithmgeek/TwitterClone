@@ -67,6 +67,8 @@ public class RequestHandler {
         return new ResponseEntity(null, HttpStatus.BAD_REQUEST);
     }
 
+
+
     //Add new user handler
     @RequestMapping("/addUser")
     public ResponseEntity handleAddUserRequest(@RequestBody User user) {
@@ -137,7 +139,7 @@ public class RequestHandler {
             try {
                 JSONObject resetPswd = new JSONObject(json);
                 User f=userRepository.findByEmail(resetPswd.getString("email"));
-                if (f.getEmail() != null && f.getPhone() != null) {
+                if (f.getEmail() != null && f.getPhone() ==resetPswd.getString("tel")) {
                     System.out.println("Password Send successfully");
                     emailPassword.send(resetPswd.getString("email"));
                     return new ResponseEntity(null,HttpStatus.OK);
